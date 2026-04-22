@@ -1,0 +1,316 @@
+/* ============================================= */
+/* SECCIÓN: NUESTRA HISTORIA                     */
+/* ============================================= */
+
+.nuestra-historia-page {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.historia-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #000;
+    font-family: Arial, sans-serif;
+}
+
+/* --- GRID DE CAJAS --- */
+.historia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.historia-col-left, 
+.historia-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo común para todas las cajas */
+.historia-box {
+    background-color: #3b074f; /* Color morado oscuro casi guinda basado en la imagen */
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    /* Efecto moderno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.historia-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* CAJA: INICIOS */
+.box-inicios {
+    flex: 0 0 auto;
+    padding-bottom: 70px;
+}
+
+.box-inicios p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+}
+
+.box-footer-left {
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* CAJA: CRECIMIENTO */
+.box-crecimiento {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 70px;
+}
+
+.crecimiento-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.crecimiento-content p {
+    flex: 1;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+}
+
+.crecimiento-image {
+    width: 160px;
+    height: 110px;
+    border: 3px solid rgba(255,255,255,0.2); /* Borde sutil transparente */
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.crecimiento-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box-footer-right {
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* CAJA: EQUIPO */
+.box-equipo {
+    text-align: center;
+    padding: 25px 30px 40px;
+}
+
+.box-equipo h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.team-image-container {
+    width: 100%;
+    height: 140px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.team-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.team-avatars {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Círculos de Avatares (Iconos con anillos como en tu diseño) */
+.avatar-circle {
+    width: 55px;
+    height: 55px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #6b7280; /* Anillo gris interior */
+    box-shadow: 0 0 0 3px #fff; /* Anillo blanco exterior */
+    margin: 5px; /* Importante para que el box-shadow no se corte */
+}
+
+.avatar-circle i {
+    font-size: 32px;
+    color: #3b82f6; /* Color azul oscuro/celeste del mono */
+    margin-top: 4px; /* Pequeño ajuste para centrar visualmente el icono */
+}
+
+/* CAJA: MISIÓN Y VISIÓN */
+.box-mision {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-mision h2 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.mision-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.mision-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.mision-logo-circle {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.mision-logo-circle i {
+    font-size: 45px;
+    color: #1a1a1a;
+}
+
+.mision-logo-text {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.mision-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mision-lista p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* --- TABLA ESTRATÉGICA --- */
+.historia-table-container {
+    background-color: #1a0426; /* Color morado súper oscuro para la tabla */
+    padding: 35px 40px;
+    border-radius: 4px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.historia-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ccc; /* Texto en gris platinado */
+    font-size: 14px;
+}
+
+.historia-table th {
+    text-align: left;
+    color: #00e5ff; /* Color cyan/verdeagua brillante */
+    font-size: 13px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255,255,255,0.1); /* Línea de cabecera sutíl */
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.historia-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05); /* Separador de filas casi invisible */
+}
+
+.historia-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Efecto hover suave en la tabla */
+.historia-table tbody tr {
+    transition: background-color 0.3s;
+}
+
+.historia-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03); 
+}
+
+/* ============================================= */
+/* RESPONSIVIDAD (MÓVIL)                         */
+/* ============================================= */
+@media (max-width: 900px) {
+    .historia-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+}
+
+@media (max-width: 600px) {
+    .crecimiento-content {
+        flex-direction: column;
+    }
+    
+    .crecimiento-image {
+        width: 100%;
+        height: 150px;
+    }
+
+    .mision-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .historia-table-container {
+        padding: 20px;
+        overflow-x: auto; /* Scroll si la tabla es muy ancha */
+    }
+
+    .historia-title {
+        font-size: 26px;
+        text-align: center;
+    }
+}

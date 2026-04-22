@@ -1,0 +1,421 @@
+/* Contenedor General */
+.product-page-container {
+    padding: 40px 20px;
+}
+
+/* --- TARJETA SUPERIOR --- */
+.product-detail-card {
+    background-color: #c711ff;
+    /* Morado intenso */
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    color: white;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.product-visual {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-visual img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-info {
+    flex: 1.5;
+}
+
+.product-info h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Precio y Botones */
+.purchase-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.price-tag {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.buy-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-buy:hover,
+.btn-cart:hover {
+    scale: 1.1;
+    background-color: rgb(13, 81, 253);
+}
+
+.btn-buy {
+    background-color: #dfff00;
+    /* Amarillo lima */
+    color: black;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-cart {
+    background-color: #f97316;
+    /* Naranja */
+    color: black;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Especificaciones */
+.specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+}
+
+.spec-item i {
+    background-color: white;
+    color: #310069;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- TARJETA DE RESEÑAS --- */
+.reviews-card {
+    background-color: #310069;
+    border-radius: 30px;
+    padding: 30px;
+    color: white;
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.general-score {
+    text-align: right;
+}
+
+.reviews-scroll-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    /* Para que tenga scroll si hay muchas */
+    padding-right: 15px;
+}
+
+/* Estilo del Scrollbar personalizado */
+.reviews-scroll-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.reviews-scroll-container::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+.review-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.review-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-detail-card {
+        flex-direction: column;
+    }
+
+    .reviews-scroll-container {
+        grid-template-columns: 1fr;
+    }
+
+    .purchase-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================= */
+/* LAYOUT DE PRODUCTOS (SIDEBAR + GRID)          */
+/* ============================================= */
+
+/* Contenedor principal de la página de productos */
+.products-page {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- SIDEBAR DE FILTROS --- */
+.filters-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    /* Evita que el sidebar se encoja */
+    background-color: #d7dcf7;
+    /* Morado muy claro */
+    border: 2px solid #1e0fef;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.filters-sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: serif;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Slider de precio */
+.price-slider {
+    width: 100%;
+    accent-color: #472bff;
+    cursor: pointer;
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* --- CONTENIDO PRINCIPAL (DERECHA) --- */
+.products-content {
+    flex-grow: 1;
+    /* Ocupa todo el espacio restante */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabecera de resultados (Texto y Ordenar por) */
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* Estilo del selector 'Ordenar por' */
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.sort-select {
+    background-color: #98acf3;
+    border: none;
+    padding: 8px 35px 8px 20px;
+    border-radius: 20px;
+    appearance: none;
+    /* Quita el diseño del navegador */
+    -webkit-appearance: none;
+    cursor: pointer;
+    font-weight: 500;
+    outline: none;
+}
+
+.select-wrapper::after {
+    content: '▼';
+    font-size: 10px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* --- GRID Y TARJETAS DE PRODUCTO --- */
+.products-grid {
+    display: grid;
+    /* Crea columnas automáticas de mínimo 220px */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.product-card {
+    background-color: #f1f5f9;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.platform-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.img-wrapper {
+    background: white;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.product-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.product-card h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+/* --- PAGINACIÓN --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.page-num,
+.page-arrow {
+    background-color: #e9d5ff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.page-num.active {
+    background-color: #212ff7;
+    color: white;
+}
+
+.page-num:hover:not(.active) {
+    background-color: #ddd6fe;
+}
+
+/* ============================================= */
+/* RESPONSIVE (MÓVIL)                            */
+/* ============================================= */
+@media (max-width: 768px) {
+    .products-page {
+        flex-direction: column;
+        /* Sidebar arriba, productos abajo */
+    }
+
+    .filters-sidebar {
+        width: 100%;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 productos por fila */
+    }
+
+    .results-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

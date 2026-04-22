@@ -1,0 +1,757 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*Fijado de Barra de Navegacion */
+.navbar-fixed {
+    position: sticky;
+    top: 0;
+    /* Se pega al borde superior de la pantalla */
+    z-index: 1000;
+    /* Se asegura de estar por encima de los productos y banners */
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra elegante para dar profundidad */
+}
+
+.top-utility-bar,
+.main-navigation-row {
+    position: relative;
+    /* Cambiamos sticky por relative */
+    width: 100%;
+    display: flex;
+    /* Asegúrate de mantener tus flexbox para el diseño */
+}
+
+html,
+body {
+    max-width: 100%;
+
+}
+
+
+/* El contenedor principal de arriba */
+.top-utility-bar {
+    display: flex;
+    align-items: center;
+    /* Centra todo verticalmente */
+    justify-content: space-between;
+    /* Separa la oferta del resto */
+    padding: 10px 20px;
+    background-color: #fff;
+    /* O el color de fondo que prefieras */
+}
+
+/* El bloque de la izquierda (Oferta) */
+.promo-bar {
+    background-color: #a855f7;
+    color: white;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 2px;
+    /* Un poco menos redondeado según tu imagen */
+}
+
+/* El bloque que agrupa Buscador e Iconos */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* Espacio entre el buscador y los iconos */
+}
+
+/* Buscador */
+.search-container {
+    background-color: #cbd5e1;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: 250px;
+}
+
+.search-container input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-weight: bold;
+}
+
+.search-container button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Iconos de Usuario y Carrito */
+.user-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.user-login,
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Estilo para el icono (si usas FontAwesome) */
+.user-login i,
+.cart i {
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+/* Contenedor de la fila (Logo + Nav) */
+.flex-header {
+    display: flex;
+    align-items: center;
+    /* Alineación vertical perfecta */
+    gap: 80px;
+    /* Espacio entre el logo y la barra */
+    padding-top: 20px;
+}
+
+/* Estilo del Logo */
+.logo {
+    font-size: 48px;
+    font-weight: bold;
+    font-family: sans-serif;
+    /* O la que definiste en Penpot */
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+/* La barra morada (El Pill) */
+.nav-pill {
+    background-color: #a855f7;
+    border-radius: 50px;
+    /* Esto hace las puntas redondas */
+    padding: 20px 40px;
+    flex-grow: 1;
+    /* Esto hace que la barra ocupe el espacio sobrante si quieres */
+    max-width: 800px;
+    /* Ajusta según qué tan larga quieras la barra */
+    margin-top: 5px;
+    margin: 10px;
+}
+
+.nav-pill ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+}
+
+.nav-pill a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-pill li a {
+    padding: 2px 30px;
+    display: block;
+    white-space: nowrap;
+}
+
+.nav-pill a:hover {
+    color: #300063;
+    /* Cambio de color suave al pasar el mouse */
+}
+
+/* 1. Preparamos el contenedor padre */
+.dropdown {
+    position: relative;
+    /* Importante para que el submenú se alinee con este texto */
+}
+
+/* 2. Estilo del submenú (Oculto por defecto) */
+.submenu {
+    display: none !important;
+    /* Lo escondemos */
+    position: absolute;
+    /* Se "despega" del flujo para flotar */
+    top: 100%;
+    /* Aparece justo debajo del texto PRODUCTOS */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Lo centra perfectamente */
+    list-style: none;
+    padding: 10px 0;
+    z-index: 100;
+    /* Asegura que flote sobre el contenido (como la imagen de RE8) */
+}
+
+/* 3. Estilo de los botones del submenú */
+.submenu li {
+    margin-top: 5px;
+}
+
+.submenu a {
+    background-color: #c084fc;
+    /* Un morado un poco más claro como en tu imagen */
+    color: white;
+    padding: 10px 25px;
+    display: block;
+    text-decoration: none;
+    border-radius: 12px;
+    /* Bordes redondeados como en tu captura */
+    font-size: 14px;
+    white-space: nowrap;
+    /* Evita que el texto se rompa en dos líneas */
+    transition: background 0.3s;
+}
+
+.submenu a:hover {
+    background-color: #a855f7;
+    /* Se oscurece al pasar el mouse */
+}
+
+/* 4. LA MAGIA: Mostrar al pasar el mouse */
+.dropdown:hover .submenu {
+    display: block !important;
+    /* Aparece cuando el cursor está sobre "PRODUCTOS" */
+}
+
+.banner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.offer-card {
+    width: 90%;
+    max-width: 1200px;
+    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-text h2 {
+    font-size: 3rem;
+    color: white;
+    margin: 0;
+    font-weight: 800;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.imageRE8 img {
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+.imageRE8 img:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* Sección General */
+.featured-section {
+    padding: 0 15px;
+    margin: 20px 0;
+    margin-top: 0px;
+}
+
+.featured-section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-family: 'Serif', Georgia, serif;
+    /* Fuente elegante como en tu imagen */
+}
+
+/* Botones de Filtro */
+.filter-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.btn-filter {
+    background: white;
+    border: 1.5px solid #000;
+    border-radius: 10px;
+    padding: 8px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-filter:hover {
+    background-color: #f3f4f6;
+}
+
+/* Rejilla de Productos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* Tarjeta Individual */
+.product-card {
+    background-color: #e5e7eb;
+    /* Gris claro de fondo */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    border-radius: 4px;
+}
+
+/* Icono de Plataforma (Arriba Izquierda) */
+.platform-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+/* Contenedor de la imagen del producto */
+.img-wrapper {
+    background: white;
+    margin: 15px 0;
+    padding: 10px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* IMPORTANTE: Esto recorta la imagen cuando crece para que no tape el texto */
+    border-radius: 4px;
+}
+
+.img-wrapper a {
+    display: flex;
+    /* Hace que el enlace se comporte como el flexbox del padre */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.product-img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.product-card img:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Línea final */
+.bottom-line {
+    border: none;
+    height: 6px;
+    background-color: #9ca3af;
+    border-radius: 10px;
+}
+
+/* SECCION DE CATEGORIAS */
+.gaming-categories {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* El contenedor morado de fondo */
+.categories-wrapper {
+    background-color: #7a008a;
+    /* Morado intenso de tu imagen */
+    padding: 40px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo general de las barras/botones */
+.category-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centra el contenido */
+    text-decoration: none;
+    padding: 15px 50px;
+    border-radius: 25px;
+    font-size: 40px;
+    /* Tamaño de fuente grande como en tu imagen */
+    font-weight: bold;
+    color: #000;
+    /* Texto negro según la imagen */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.category-card:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* Colores de marca */
+.ps {
+    background-color: #00439c;
+    color: #ffffff;
+}
+
+/* Azul */
+.switch {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+/* Rojo */
+.xbox {
+    background-color: #0d9201;
+    color: #ffffff;
+}
+
+/* Verde */
+
+/* Ajuste de logos */
+.brand-logo {
+    height: 70px;
+    /* Tamaño grande para los logos */
+    width: auto;
+    margin: 0 20px;
+}
+
+/* Para que Nintendo tenga el logo a la derecha, invertimos el orden si es necesario o 
+   simplemente el HTML ya lo tiene en ese orden */
+
+/* SECCION DE CATEGORIAS */
+.sub-categories {
+    padding: 50px 0;
+}
+
+/* La cuadrícula de 3 columnas */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center;
+    /* Centra los círculos en su columna */
+}
+
+/* El enlace que envuelve todo */
+.item-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-link:hover {
+    transform: translateY(-10px);
+    /* Pequeño brinco al pasar el mouse */
+}
+
+/* El contenedor circular */
+.circle-box {
+    width: 160px;
+    /* Ajusta el tamaño según tu gusto */
+    height: 160px;
+    border-radius: 50%;
+    /* Esto hace el círculo perfecto */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background-color: transparent;
+}
+
+/* Estilos para las imágenes dentro del círculo */
+.circle-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Para que la imagen llene el círculo sin deformarse */
+}
+
+/* Bordes específicos según tu imagen */
+.border-black {
+    border: 2px solid #000;
+}
+
+.border-purple {
+    border: 10px solid #e9d5ff;
+    /* El borde grueso morado de Figuras */
+}
+
+.item-link span {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+}
+
+/*Footer*/
+
+.main-footer {
+    background-color: #1a1a1a;
+    /* Un negro/gris muy oscuro */
+    color: #fff;
+    padding-top: 40px;
+    font-family: 'Segoe UI', sans-serif;
+    border-top: 5px solid #a855f7;
+    /* Línea morada superior para mantener el estilo */
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding-bottom: 10px !important;
+}
+
+.footer-column h3 {
+    color: #a855f7;
+    /* Títulos en morado */
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+    padding-left: 5px;
+    /* Efecto sutil al pasar el mouse */
+}
+
+.footer-column p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.footer-column i {
+    color: #a855f7;
+
+}
+
+/* Redes Sociales Estilizadas */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.4s;
+}
+
+.social-btn:hover {
+    background-color: #a855f7;
+    transform: translateY(-5px);
+}
+
+/* Barra Inferior */
+.footer-bottom {
+    background-color: #111;
+    padding: 10px 15px !important;
+    border-top: 1px solid #333;
+    font-size: 0.85rem;
+    color: #888;
+
+}
+
+.bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+* {
+    box-sizing: border-box;
+    /* Fundamental para responsive */
+    max-width: 100%;
+    /* Evita que cualquier cosa sea más ancha que la pantalla */
+}
+
+@media (max-width: 768px) {
+
+    /* 1. Barra de Oferta: Que el texto no se salga */
+    .promo-bar {
+        width: 100% !important;
+        font-size: 10px !important;
+        white-space: normal;
+        /* Permite que el texto baje a otra línea si es necesario */
+        padding: 5px;
+        text-align: center;
+    }
+
+    /* 2. Buscador y controles: Ponemos uno debajo del otro */
+    .top-utility-bar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .header-right {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .search-container {
+        width: 100% !important;
+        /* Que use todo el ancho del cel */
+    }
+
+    /* 3. Navegación (El Pill Morado): Aquí estaba el gran error */
+    .flex-header {
+        flex-direction: column;
+        gap: 10px !important;
+        /* Bajamos el gap de 80px a 10px */
+        padding: 10px;
+    }
+
+    .nav-pill {
+        width: 95% !important;
+        max-width: 100%;
+        padding: 10px !important;
+        margin: 0 auto;
+    }
+
+    .nav-pill ul {
+        flex-wrap: wrap;
+        /* Si no caben, que bajen */
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .nav-pill a {
+        font-size: 12px;
+        /* Letra más pequeña para que quepa todo */
+    }
+
+    /* 4. Banner Resident Evil */
+    .offer-card {
+        flex-direction: column;
+        width: 95%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .offer-text h2 {
+        font-size: 1.4rem !important;
+        /* Texto más pequeño */
+    }
+
+    .imageRE8 img {
+        height: 120px;
+        margin-top: 15px;
+    }
+
+    /* Contenedor de botones */
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        /* LA CLAVE: permite que los botones bajen a otra fila */
+        justify-content: center;
+        /* Los centra en la pantalla */
+        gap: 10px;
+        /* Reducimos un poco el espacio entre ellos */
+        margin-bottom: 30px;
+        padding: 0 10px;
+        /* Pequeño margen para que no toquen las orillas */
+    }
+
+    /* El botón individual */
+    .btn-filter {
+        padding: 8px 15px;
+        /* Reducimos el padding lateral */
+        font-size: 13px;
+        /* Letra un poco más pequeña para ahorrar espacio */
+        white-space: normal;
+        /* Permite que el texto largo (como 'Todos los productos') se divida en 2 líneas */
+        text-align: center;
+        min-width: 100px;
+        /* Les damos un ancho mínimo para que se vean uniformes */
+        flex: 1 1 auto;
+        /* Permite que crezcan un poco para llenar huecos */
+        max-width: 150px;
+        /* Evita que se vuelvan gigantes */
+    }
+}
