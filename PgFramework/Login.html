@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - GameOn</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Integración del framework Shoelace vía CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/dark.css" />
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace-autoloader.js"></script>
+</head>
+
+<body>
+    <header class="navbar-fixed">
+        <div class="top-utility-bar">
+            <div class="promo-bar">
+                ¡OFERTA RELAMPAGO! 😲 25% de descuento en gran parte del catalogo
+            </div>
+
+            <div class="header-right">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar">
+                    <button type="submit">🔍</button>
+                </div>
+
+                <div class="user-controls">
+                    <div class="user-login">
+                        <i class="fa-solid fa-user"></i>
+                        <a href="../PgFramework/Login.html"><span>Iniciar-sección</span></a>
+                    </div>
+                    <div class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <a href="../Carrito.html"><span class="cart-badge">1</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-navigation-row">
+            <div class="container flex-header">
+                <h1 class="logo">GAMEON</h1>
+
+                <button class="mobile-menu-btn"
+                    onclick="document.querySelector('.nav-pill').classList.toggle('active')"><i
+                        class="fa-solid fa-bars"></i></button>
+                <nav class="nav-pill">
+                    <ul>
+                        <li><a href="../index.html">INICIO</a></li>
+                        <li class="dropdown">
+                            <a href="../Productos.html">PRODUCTOS</a>
+                            <ul class="submenu">
+                                <li><a href="#">Destacados</a></li>
+                                <li><a href="#">Videojuegos</a></li>
+                                <li><a href="#">Accesorios</a></li>
+                                <li><a href="#">Figuras</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../NuesHis.html">ACERCA DE</a></li>
+                        <li><a href="../Soporte.html">SOPORTE</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .login-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+
+        .login-card {
+            background-color: #f8f9fa;
+            /* Fondo ligeramente gris para la tarjeta */
+            border: 4px solid #1a0b2e;
+            /* Borde morado oscuro */
+            border-radius: 12px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-card h1 {
+            color: #1a0b2e;
+            margin: 0 0 5px 0;
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .login-card h2 {
+            color: #333;
+            margin: 0 0 30px 0;
+            font-size: 1.4rem;
+            font-weight: normal;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        /* Estilizando el input de Shoelace  */
+        sl-input::part(base) {
+            border-color: #1a0b2e;
+            border-radius: 6px;
+        }
+
+        .prefix-icon {
+            padding-left: 10px;
+            color: #1a0b2e;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            color: #a855f7;
+            /* Morado claro */
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-top: -10px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .btn-entrar {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .btn-entrar::part(base) {
+            background-color: #f97316;
+            /* Naranja */
+            border-color: #f97316;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            /* Bordes redondeados tipo pill */
+            height: 45px;
+        }
+
+        .btn-entrar::part(base):hover {
+            background-color: #ea580c;
+            border-color: #ea580c;
+        }
+
+        .btn-registrarse {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .btn-registrarse::part(base) {
+            background-color: #d9f904;
+            /* Amarillo verdoso brillante */
+            border-color: #d9f904;
+            color: #111;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            height: 45px;
+        }
+
+        .btn-registrarse::part(base):hover {
+            background-color: #bef203;
+            border-color: #bef203;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #444;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #d1d5db;
+        }
+
+        .divider:not(:empty)::before {
+            margin-right: .5em;
+        }
+
+        .divider:not(:empty)::after {
+            margin-left: .5em;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #9ca3af;
+            /* Gris */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .social-circle:hover {
+            background-color: #6b7280;
+            transform: scale(1.05);
+        }
+    </style>
+
+    <main class="login-page">
+        <div class="login-card">
+            <h1>GameOn</h1>
+            <h2>Iniciar Sesión</h2>
+
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <sl-input type="email" placeholder="E-mail" required>
+                        <span slot="prefix" class="prefix-icon">@</span>
+                    </sl-input>
+                </div>
+
+                <div class="input-group">
+                    <sl-input type="password" placeholder="Contraseña" password-toggle required>
+                        <i slot="prefix" class="fa-solid fa-lock prefix-icon"></i>
+                    </sl-input>
+                </div>
+
+                <a href="#" class="forgot-password">Olvidé mi contraseña</a>
+
+                <sl-button class="btn-entrar" type="submit">Entrar</sl-button>
+                <sl-button class="btn-registrarse" type="button">Registrarse</sl-button>
+            </form>
+
+            <div class="divider">O iniciar con</div>
+
+            <div class="social-login">
+                <a href="#" class="social-circle" title="Google"><i class="fa-brands fa-google"></i></a>
+                <a href="#" class="social-circle" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social-circle" title="Xbox"><i class="fa-brands fa-xbox"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+
+            <div class="footer-column">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="#">Formulario de contacto</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Estado del pedido</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p><i class="fa-brands fa-whatsapp"></i> <strong>Whatsapp:</strong><br> 3448900987</p>
+                <p><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong><br> 3447657181</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Información Legal</h3>
+                <ul>
+                    <li><a href="#">Avisos de Privacidad</a></li>
+                    <li><a href="#">Avisos legales y uso de marca</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Redes Sociales</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn x-twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <p>&copy; 2025-2026 GameOn</p>
+                <p><i class="fa-solid fa-location-dot"></i> México / Yahualica Jalisco</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="StyleXbox.css">
+    <title>Gameon - Xbox</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="navbar-fixed">
+        <div class="top-utility-bar">
+
+            <div class="promo-bar">
+                ¡OFERTA RELAMPAGO! 😲 25% de descuento en gran parte del catalogo
+            </div>
+
+            <div class="header-right">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar">
+                    <button type="submit">🔍</button>
+                </div>
+
+                <div class="user-controls">
+                    <div class="user-login">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Iniciar-sección</span>
+                    </div>
+                    <div class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-badge">1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-navigation-row">
+            <div class="container flex-header">
+                <h1 class="logo">GAMEON</h1>
+
+                <button class="mobile-menu-btn" onclick="document.querySelector('.nav-pill').classList.toggle('active')"><i class="fa-solid fa-bars"></i></button>
+                <nav class="nav-pill">
+                    <ul>
+                        <li><a href="index.html">INICIO</a></li>
+                        <li class="dropdown">
+                            <a href="#">PRODUCTOS</a>
+                            <ul class="submenu">
+                                <li><a href="#">Destacados</a></li>
+                                <li><a href="Productos.html">Videojuegos</a></li>
+                                <li><a href="#">Accesorios</a></li>
+                                <li><a href="#">Figuras</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="NuesHis.html">ACERCA DE</a></li>
+                        <li><a href="Soporte.html">SOPORTE</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="products-page container">
+        <aside class="filters-sidebar">
+            <h2>Filtrar por</h2>
+
+            <div class="filter-group">
+                <h3>Categoria</h3>
+                <label><input type="radio" name="cat" checked> Todo</label>
+                <label><input type="radio" name="cat"> PS</label>
+                <label><input type="radio" name="cat"> SWITCH</label>
+                <label><input type="radio" name="cat"> XBOX</label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Marca</h3>
+                <label><input type="radio" name="brand"> <span class="radio-custom"></span></label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Rango de precio</h3>
+                <input type="range" class="price-slider" min="100" max="30000">
+                <div class="price-labels">
+                    <span>$100.00</span>
+                    <span>$30,000.00</span>
+                </div>
+            </div>
+        </aside>
+
+        <section class="products-content">
+            <div class="results-header">
+                <p>Resultados (12 de 30)</p>
+                <div class="sort-by">
+                    <span>Ordenar por</span>
+                    <div class="select-wrapper">
+                        <select class="sort-select">
+                            <option value="relevante">Más relevante</option>
+                            <option value="menor">Menor precio</option>
+                            <option value="mayor">Mayor precio</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-brands fa-xbox"></i></div>
+                    <div class="card-img">
+                        <img src="img/xbox_series_x.jpg" alt="Xbox Series X">
+                    </div>
+                    <h4>Consola Xbox Series X</h4>
+                    <p class="price">$9,900</p>
+                    <button class="btn-add-cart">Agregar al carrito</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-brands fa-xbox"></i></div>
+                    <div class="card-img">
+                        <img src="img/xbox_series_s.jpg" alt="Xbox Series S">
+                    </div>
+                    <h4>Consola Xbox Series S</h4>
+                    <p class="price">$5,500</p>
+                    <button class="btn-add-cart">Agregar al carrito</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-brands fa-xbox"></i></div>
+                    <div class="card-img">
+                        <img src="img/xbox_controller.jpg" alt="Control Inalámbrico Xbox">
+                    </div>
+                    <h4>Control Inalámbrico Xbox</h4>
+                    <p class="price">$1,100</p>
+                    <button class="btn-add-cart">Agregar al carrito</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-brands fa-xbox"></i></div>
+                    <div class="card-img">
+                        <img src="img/xbox_elite_2.jpg" alt="Control Xbox Elite Series 2">
+                    </div>
+                    <h4>Control Xbox Elite Series 2</h4>
+                    <p class="price">$3,500</p>
+                    <button class="btn-add-cart">Agregar al carrito</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-brands fa-xbox"></i></div>
+                    <div class="card-img">
+                        <img src="img/xbox_headset.jpg" alt="Audífonos Inalámbricos Xbox">
+                    </div>
+                    <h4>Audífonos Inalámbricos Xbox</h4>
+                    <p class="price">$1,800</p>
+                    <button class="btn-add-cart">Agregar al carrito</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-brands fa-xbox"></i></div>
+                    <div class="card-img">
+                        <img src="img/halo_infinite.jpg" alt="Halo Infinite">
+                    </div>
+                    <h4>Halo Infinite</h4>
+                    <p class="price">$900</p>
+                    <button class="btn-add-cart">Agregar al carrito</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-brands fa-xbox"></i></div>
+                    <div class="card-img">
+                        <img src="img/forza_horizon_5.jpg" alt="Forza Horizon 5">
+                    </div>
+                    <h4>Forza Horizon 5</h4>
+                    <p class="price">$1,200</p>
+                    <button class="btn-add-cart">Agregar al carrito</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-brands fa-xbox"></i></div>
+                    <div class="card-img">
+                        <img src="img/starfield.jpg" alt="Starfield">
+                    </div>
+                    <h4>Starfield</h4>
+                    <p class="price">$1,300</p>
+                    <button class="btn-add-cart">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="page-arrow">&lt;</button>
+                <button class="page-num active">1</button>
+                <button class="page-num">2</button>
+                <button class="page-num">3</button>
+                <button class="page-arrow">&gt;</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+
+            <div class="footer-column">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="#">Formulario de contacto</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Estado del pedido</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p><i class="fa-brands fa-whatsapp"></i> <strong>Whatsapp:</strong><br> 3448900987</p>
+                <p><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong><br> 3447657181</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Información Legal</h3>
+                <ul>
+                    <li><a href="#">Avisos de Privacidad</a></li>
+                    <li><a href="#">Avisos legales y uso de marca</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Redes Sociales</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn x-twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <p>&copy; 2025-2026 GameOn</p>
+                <p><i class="fa-solid fa-location-dot"></i> México / Yahualica Jalisco</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

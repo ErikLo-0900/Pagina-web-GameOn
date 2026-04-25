@@ -136,6 +136,20 @@ body {
     letter-spacing: -1px;
 }
 
+/* Botón Hamburguesa Oculto por defecto en PC */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: #a855f7;
+    cursor: pointer;
+    padding: 5px;
+}
+.mobile-menu-btn:hover {
+    color: #7e22ce;
+}
+
 /* La barra morada (El Pill) */
 .nav-pill {
     background-color: #a855f7;
@@ -288,6 +302,8 @@ body {
     /* Fuente elegante como en tu imagen */
 }
 
+
+
 /* Botones de Filtro */
 .filter-buttons {
     display: flex;
@@ -306,7 +322,9 @@ body {
 }
 
 .btn-filter:hover {
-    background-color: #f3f4f6;
+    background-color: #9e00f3;
+    border-color: #a019d4;
+    color: #f5f5f5;
 }
 
 /* Rejilla de Productos */
@@ -346,7 +364,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* IMPORTANTE: Esto recorta la imagen cuando crece para que no tape el texto */
+    /* Esto recorta la imagen cuando crece para que no tape el texto */
     border-radius: 4px;
 }
 
@@ -404,7 +422,6 @@ body {
 /* El contenedor morado de fondo */
 .categories-wrapper {
     background-color: #7a008a;
-    /* Morado intenso de tu imagen */
     padding: 40px;
     border-radius: 35px;
     display: flex;
@@ -655,17 +672,17 @@ body {
     /* 1. Barra de Oferta: Que el texto no se salga */
     .promo-bar {
         width: 100% !important;
-        font-size: 10px !important;
+        font-size: 11px !important;
         white-space: normal;
-        /* Permite que el texto baje a otra línea si es necesario */
-        padding: 5px;
+        padding: 8px;
         text-align: center;
     }
 
-    /* 2. Buscador y controles: Ponemos uno debajo del otro */
+    /* 2. Buscador y controles */
     .top-utility-bar {
         flex-direction: column;
         padding: 10px;
+        gap: 15px;
     }
 
     .header-right {
@@ -676,82 +693,218 @@ body {
 
     .search-container {
         width: 100% !important;
-        /* Que use todo el ancho del cel */
     }
 
-    /* 3. Navegación (El Pill Morado): Aquí estaba el gran error */
+    .user-controls {
+        width: 100%;
+        justify-content: center;
+        gap: 30px;
+    }
+
     .flex-header {
-        flex-direction: column;
-        gap: 10px !important;
-        /* Bajamos el gap de 80px a 10px */
-        padding: 10px;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    .mobile-menu-btn {
+        display: block !important;
+    }
+
+    .logo {
+        font-size: 32px;
     }
 
     .nav-pill {
-        width: 95% !important;
+        display: none; /* Oculto por defecto en móvil */
+        width: 100% !important;
         max-width: 100%;
-        padding: 10px !important;
-        margin: 0 auto;
+        padding: 15px 10px !important;
+        margin: 15px 0 0 0;
+        border-radius: 20px;
+    }
+
+    .nav-pill.active {
+        display: block; /* Muestra el menú cuando está activo */
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .nav-pill ul {
-        flex-wrap: wrap;
-        /* Si no caben, que bajen */
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
         justify-content: center;
-        gap: 5px;
+        align-items: stretch;
+        text-align: center;
+        width: 100%;
     }
 
-    .nav-pill a {
+    .nav-pill li {
+        width: 100%;
+    }
+
+    .nav-pill li a {
+        padding: 12px 10px;
+        font-size: 14px;
+        white-space: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1); /* Efecto de botón sutil */
+        border-radius: 8px;
+    }
+
+    /* Ajuste para el submenú en móvil */
+    .submenu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: transparent;
+        padding: 0;
+    }
+
+    .submenu a {
         font-size: 12px;
-        /* Letra más pequeña para que quepa todo */
+        padding: 8px;
+        margin-top: 5px;
     }
 
     /* 4. Banner Resident Evil */
     .offer-card {
         flex-direction: column;
         width: 95%;
-        padding: 20px;
+        padding: 25px 15px;
         text-align: center;
+        gap: 20px;
     }
 
     .offer-text h2 {
-        font-size: 1.4rem !important;
-        /* Texto más pequeño */
+        font-size: 1.6rem !important;
     }
 
     .imageRE8 img {
-        height: 120px;
-        margin-top: 15px;
+        height: 140px;
     }
 
     /* Contenedor de botones */
     .filter-buttons {
         display: flex;
         flex-wrap: wrap;
-        /* LA CLAVE: permite que los botones bajen a otra fila */
         justify-content: center;
-        /* Los centra en la pantalla */
         gap: 10px;
-        /* Reducimos un poco el espacio entre ellos */
         margin-bottom: 30px;
         padding: 0 10px;
-        /* Pequeño margen para que no toquen las orillas */
     }
 
-    /* El botón individual */
     .btn-filter {
         padding: 8px 15px;
-        /* Reducimos el padding lateral */
         font-size: 13px;
-        /* Letra un poco más pequeña para ahorrar espacio */
         white-space: normal;
-        /* Permite que el texto largo (como 'Todos los productos') se divida en 2 líneas */
         text-align: center;
         min-width: 100px;
-        /* Les damos un ancho mínimo para que se vean uniformes */
         flex: 1 1 auto;
-        /* Permite que crezcan un poco para llenar huecos */
         max-width: 150px;
-        /* Evita que se vuelvan gigantes */
     }
+
+    /* 5. Cajas de categorías (PS, Switch, Xbox) */
+    .categories-wrapper {
+        padding: 20px 15px;
+        border-radius: 20px;
+        gap: 15px;
+        width: 90%;
+    }
+
+    .category-card {
+        padding: 15px;
+        font-size: 22px;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 15px;
+    }
+
+    .brand-logo {
+        height: 50px;
+        margin: 0;
+    }
+
+    /* 6. Cuadrícula de subcategorías (Círculos de PS4, PS5, etc.) */
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 10px;
+        padding: 0 10px;
+    }
+
+    .circle-box {
+        width: 110px;
+        height: 110px;
+    }
+
+    .item-link span {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    /* 7. Footer responsive */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-column h3 {
+        margin-left: 0;
+    }
+
+    .footer-column ul {
+        margin-left: 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .bottom-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+/* Botón de Agregar al carrito (Páginas de productos) */
+.btn-add-cart {
+    background-color: #f97316;
+    /* Naranja GameOn */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-add-cart:hover {
+    background-color: #ea580c;
+    transform: scale(1.05);
+}
+
+/* Auto-ajuste para que las tarjetas de productos mantengan los botones y precios alineados abajo */
+.product-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.product-card .price {
+    margin-top: auto !important;
 }

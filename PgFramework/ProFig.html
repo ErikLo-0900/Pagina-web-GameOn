@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="   ../styles.css">
+    <link rel="stylesheet" href="../StylePlay.css">
+    <title>Gameon - Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Integración del framework Shoelace vía CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/dark.css" />
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace-autoloader.js"></script>
+</head>
+
+<body>
+    <header class="navbar-fixed">
+        <div class="top-utility-bar">
+
+            <div class="promo-bar">
+                ¡OFERTA RELAMPAGO! 😲 25% de descuento en gran parte del catalogo
+            </div>
+
+            <div class="header-right">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar">
+                    <button type="submit">🔍</button>
+                </div>
+
+                <div class="user-controls">
+                    <div class="user-login">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Iniciar-sección</span>
+                    </div>
+                    <div class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-badge">1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-navigation-row">
+            <div class="container flex-header">
+                <h1 class="logo">GAMEON</h1>
+
+                <button class="mobile-menu-btn" onclick="document.querySelector('.nav-pill').classList.toggle('active')"><i class="fa-solid fa-bars"></i></button>
+                <nav class="nav-pill">
+                    <ul>
+                        <li><a href="../index.html">INICIO</a></li>
+                        <li class="dropdown">
+                            <a href="../Productos.html">PRODUCTOS</a>
+                            <ul class="submenu">
+                                <li><a href="#">Destacados</a></li>
+                                <li><a href="../Productos.html">Videojuegos</a></li>
+                                <li><a href="#">Accesorios</a></li>
+                                <li><a href="ProFig.html">Figuras</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../NuesHis.html">ACERCA DE</a></li>
+                        <li><a href="../Soporte.html">SOPORTE</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        /* Estilos personalizados para inyectar el tema morado a Shoelace */
+        :root {
+            --sl-color-primary-50: #faf5ff;
+            --sl-color-primary-100: #f3e8ff;
+            --sl-color-primary-200: #e9d5ff;
+            --sl-color-primary-300: #d8b4fe;
+            --sl-color-primary-400: #c084fc;
+            --sl-color-primary-500: #a855f7;
+            --sl-color-primary-600: #9333ea;
+            --sl-color-primary-700: #7e22ce;
+            --sl-color-primary-800: #6b21a8;
+            --sl-color-primary-900: #581c87;
+            --sl-color-primary-950: #3b0764;
+            --sl-focus-ring-color: rgba(168, 85, 247, 0.4);
+        }
+
+        .filters-sidebar {
+            background-color: #f3e8ff;
+            /* Fondo morado claro */
+            border: 2px solid #a855f7;
+            /* Borde morado */
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .filter-group {
+            margin-bottom: 25px;
+        }
+
+        /* Ocultar elementos nativos antiguos si siguen en el CSS */
+        .select-wrapper::after {
+            display: none;
+        }
+
+        .sort-select {
+            display: none;
+        }
+
+        .product-card {
+            border: 1px solid #e9d5ff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card .price {
+            color: #7e22ce;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .card-platform {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.2rem;
+            color: #a855f7;
+        }
+
+        .card-img {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .card-img img {
+            max-height: 150px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .product-card h4 {
+            font-size: 1rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <main class="products-page container">
+        <aside class="filters-sidebar">
+            <h2 style="font-family: inherit; font-size: 1.5rem; margin-bottom: 20px; color: #581c87;">Filtrar por</h2>
+
+            <div class="filter-group">
+                <sl-radio-group label="Categoría" value="todo">
+                    <sl-radio value="todo">Todo</sl-radio>
+                    <sl-radio value="anime">Anime / Manga</sl-radio>
+                    <sl-radio value="comics">Cómics / Películas</sl-radio>
+                    <sl-radio value="videojuegos">Videojuegos</sl-radio>
+                </sl-radio-group>
+            </div>
+
+            <div class="filter-group">
+                <sl-radio-group label="Marca" value="todas">
+                    <sl-radio value="todas">Todas</sl-radio>
+                    <sl-radio value="funko">Funko Pop!</sl-radio>
+                    <sl-radio value="goodsmile">Good Smile (Nendoroid)</sl-radio>
+                    <sl-radio value="mcfarlane">McFarlane Toys</sl-radio>
+                    <sl-radio value="bandai">Bandai Spirits</sl-radio>
+                </sl-radio-group>
+            </div>
+
+            <div class="filter-group">
+                <sl-range min="100" max="5000" step="50" value="5000" label="Rango de precio"></sl-range>
+                <div class="price-labels"
+                    style="color: #6b21a8; display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 5px;">
+                    <span>$100.00</span>
+                    <span>$5,000.00</span>
+                </div>
+            </div>
+
+            <sl-button variant="primary" style="width: 100%; margin-top: 10px;">Aplicar Filtros</sl-button>
+        </aside>
+
+        <section class="products-content">
+            <div class="results-header"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <p style="color: #6b21a8; font-weight: bold; margin: 0;">Resultados (8 de 45)</p>
+                <div class="sort-by" style="display: flex; align-items: center; gap: 10px;">
+                    <span style="color: #6b21a8;">Ordenar por</span>
+                    <sl-select value="relevante" style="width: 180px;">
+                        <sl-option value="relevante">Más relevante</sl-option>
+                        <sl-option value="menor">Menor precio</sl-option>
+                        <sl-option value="mayor">Mayor precio</sl-option>
+                    </sl-select>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-solid fa-cube"></i></div>
+                    <div class="card-img">
+                        <img src="img/fig_spider.jpg" alt="Funko Pop Spider-Man">
+                    </div>
+                    <h4>Funko Pop! - Spider-Man</h4>
+                    <p class="price">$350</p>
+                    <sl-button variant="primary" outline style="width: 100%;">Añadir al carrito</sl-button>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-solid fa-cube"></i></div>
+                    <div class="card-img">
+                        <img src="img/fig_batman.jpg" alt="Figura Batman McFarlane">
+                    </div>
+                    <h4>Figura Acción - Batman</h4>
+                    <p class="price">$550</p>
+                    <sl-button variant="primary" outline style="width: 100%;">Añadir al carrito</sl-button>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-solid fa-cube"></i></div>
+                    <div class="card-img">
+                        <img src="img/fig_zelda.jpg" alt="Nendoroid Zelda">
+                    </div>
+                    <h4>Figura Nendoroid - Zelda</h4>
+                    <p class="price">$1,200</p>
+                    <sl-button variant="primary" outline style="width: 100%;">Añadir al carrito</sl-button>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-solid fa-cube"></i></div>
+                    <div class="card-img">
+                        <img src="img/fig_goku.jpg" alt="S.H. Figuarts Goku">
+                    </div>
+                    <h4>Figura S.H. Figuarts - Goku</h4>
+                    <p class="price">$1,500</p>
+                    <sl-button variant="primary" outline style="width: 100%;">Añadir al carrito</sl-button>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-solid fa-cube"></i></div>
+                    <div class="card-img">
+                        <img src="img/fig_vader.jpg" alt="Funko Pop Darth Vader">
+                    </div>
+                    <h4>Funko Pop! - Darth Vader</h4>
+                    <p class="price">$350</p>
+                    <sl-button variant="primary" outline style="width: 100%;">Añadir al carrito</sl-button>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-solid fa-cube"></i></div>
+                    <div class="card-img">
+                        <img src="img/fig_ironman.jpg" alt="Marvel Legends Iron Man">
+                    </div>
+                    <h4>Marvel Legends - Iron Man</h4>
+                    <p class="price">$600</p>
+                    <sl-button variant="primary" outline style="width: 100%;">Añadir al carrito</sl-button>
+                </div>
+
+                <!-- Producto 7 -->
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-solid fa-cube"></i></div>
+                    <div class="card-img">
+                        <img src="img/fig_mario.jpg" alt="Amiibo Mario">
+                    </div>
+                    <h4>Figura Amiibo - Mario</h4>
+                    <p class="price">$450</p>
+                    <sl-button variant="primary" outline style="width: 100%;">Añadir al carrito</sl-button>
+                </div>
+
+                <!-- Producto 8 -->
+                <div class="product-card">
+                    <div class="card-platform"><i class="fa-solid fa-cube"></i></div>
+                    <div class="card-img">
+                        <img src="img/fig_masterchief.jpg" alt="Estatua Master Chief">
+                    </div>
+                    <h4>Estatua PVC - Master Chief</h4>
+                    <p class="price">$1,800</p>
+                    <sl-button variant="primary" outline style="width: 100%;">Añadir al carrito</sl-button>
+                </div>
+            </div>
+
+            <div class="pagination" style="margin-top: 40px; display: flex; justify-content: center;">
+                <sl-button-group>
+                    <sl-button>&lt;</sl-button>
+                    <sl-button variant="primary">1</sl-button>
+                    <sl-button>2</sl-button>
+                    <sl-button>3</sl-button>
+                    <sl-button>&gt;</sl-button>
+                </sl-button-group>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+
+            <div class="footer-column">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="#">Formulario de contacto</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Estado del pedido</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p><i class="fa-brands fa-whatsapp"></i> <strong>Whatsapp:</strong><br> 3448900987</p>
+                <p><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong><br> 3447657181</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Información Legal</h3>
+                <ul>
+                    <li><a href="#">Avisos de Privacidad</a></li>
+                    <li><a href="#">Avisos legales y uso de marca</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Redes Sociales</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn x-twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <p>&copy; 2025-2026 GameOn</p>
+                <p><i class="fa-solid fa-location-dot"></i> México / Yahualica Jalisco</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

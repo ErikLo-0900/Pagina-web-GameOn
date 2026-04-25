@@ -49,43 +49,26 @@
     margin-bottom: 25px;
 }
 
-.form-group label {
-    font-size: 15px;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    background-color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 15px;
-    font-size: 15px;
-    outline: none;
-    color: #000;
+/* Estilos ajustados para componentes de Shoelace */
+sl-input,
+sl-textarea {
     width: 100%;
 }
 
-.form-group textarea {
-    resize: none;
+/* El botón naranja de Shoelace */
+sl-button.btn-submit {
+    width: 100%;
+    margin-top: 10px;
+    --sl-color-warning-600: #f97316; /* Color naranja sólido */
+    --sl-color-warning-500: #ea580c; /* Hover */
+    --sl-color-warning-700: #c2410c; /* Active */
 }
 
-.btn-submit {
-    background-color: #f97316; /* Color naranja sólido */
-    color: #fff;
-    border: none;
-    padding: 14px;
-    width: 100%;
-    border-radius: 8px;
+sl-button.btn-submit::part(base) {
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-submit:hover {
-    background-color: #ea580c; 
+    padding: 10px;
+    border-radius: 8px;
 }
 
 /* CONTENEDOR DE LA IMAGEN */
