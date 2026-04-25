@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -25,11 +25,11 @@
                 <div class="user-controls">
                     <div class="user-login">
                         <i class="fa-solid fa-user"></i>
-                        <span>Iniciar-sección</span>
+                        <a href="PgFramework/Login.html"><span>Iniciar-sección</span></a>
                     </div>
                     <div class="cart">
                         <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="cart-badge">1</span>
+                        <a href="../PgFramework/Carrito.html"><span class="cart-badge">1</span></a>
                     </div>
                 </div>
             </div>
@@ -39,6 +39,9 @@
             <div class="container flex-header">
                 <h1 class="logo">GAMEON</h1>
 
+                <button class="mobile-menu-btn"
+                    onclick="document.querySelector('.nav-pill').classList.toggle('active')"><i
+                        class="fa-solid fa-bars"></i></button>
                 <nav class="nav-pill">
                     <ul>
                         <li><a href="index.html">INICIO</a></li>
@@ -76,9 +79,15 @@
         <h2>PRODUCTOS DESTACADOS</h2>
 
         <div class="filter-buttons">
-            <button class="btn-filter">Todos Los Productos</button>
-            <button class="btn-filter">Videojuegos</button>
-            <button class="btn-filter">Figuras</button>
+            <a href="Productos.html">
+                <button class="btn-filter">Todos Los Productos</button>
+            </a>
+            <a href="#">
+                <button class="btn-filter">Videojuegos</button>
+            </a>
+            <a href="PgFramework/ProFig.html">
+                <button class="btn-filter">Figuras</button>
+            </a>
         </div>
 
         <div class="products-grid">
@@ -156,42 +165,42 @@
     <section class="sub-categories container">
         <div class="categories-grid">
 
-            <a href="ps4.html" class="item-link">
+            <a href="ProPlay.html" class="item-link">
                 <div class="circle-box">
                     <img src="img/ps4.png" alt="Playstation 4">
                 </div>
                 <span>Playstation4</span>
             </a>
 
-            <a href="ps5.html" class="item-link">
+            <a href="ProPlay.html" class="item-link">
                 <div class="circle-box border-black">
                     <img src="img/ps5.png" alt="Playstation 5">
                 </div>
                 <span>Playstation5</span>
             </a>
 
-            <a href="switch.html" class="item-link">
+            <a href="ProNin.html" class="item-link">
                 <div class="circle-box">
                     <img src="img/ns.png" alt="Nintendo Switch">
                 </div>
                 <span>Nintendo Switch</span>
             </a>
 
-            <a href="switch2.html" class="item-link">
+            <a href="ProNin.html" class="item-link">
                 <div class="circle-box">
                     <img src="img/ns2.png" alt="Nintendo Switch 2">
                 </div>
                 <span>Nintendo Switch2</span>
             </a>
 
-            <a href="xbox-all.html" class="item-link">
+            <a href="ProXbox.html" class="item-link">
                 <div class="circle-box">
                     <img src="img/xbox.png" alt="XBOX">
                 </div>
                 <span>XBOX</span>
             </a>
 
-            <a href="figuras.html" class="item-link">
+            <a href="PgFramework/ProFig.html" class="item-link">
                 <div class="circle-box border-purple">
                     <img src="img/fig.png" alt="Figuras">
                 </div>
